@@ -5,3 +5,10 @@ function split(WholeArr) {
     console.log([firstHalf, secondHalf]);
     return [firstHalf, secondHalf];
 }
+
+
+function merge (arr1, arr2){
+
+  return arr1.concat(arr2);
+
+}
