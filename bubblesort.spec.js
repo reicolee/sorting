@@ -2,7 +2,7 @@ describe('Bubble Sort', function(){
   var bubbleArr;
 
   beforeEach(function(){
-    bubbleArr = [];
+    bubbleArr = [1,5,7,10,22,12,50,40,32,35];
 
   })
 
@@ -11,9 +11,19 @@ describe('Bubble Sort', function(){
   });
 
   it('handles number in the correct order', function(){
-    bubbleArr = [1,5,7,10,22,12,50,40,32,35];
-    expect(bubbleSort(bubbleArr)).toEqual(bubbleArr.sort(function(a,b){return a-b}));
+    var sortedBubble = bubbleArr.sort(function(a,b){return a-b});
+    var bub1 = bubbleSort(bubbleArr).every(function(num,index){
+      return num === sortedBubble[index];
+    });
+
+    expect(bub1).toEqual(true);
   });
+
+   it('make sure .sort is not called', function(){
+    bubbleSort(bubbleArr);
+    expect(Array.prototype.sort.calls.any()).toEqual(false);
+   });
+
 
 
 
