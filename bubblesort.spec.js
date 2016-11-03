@@ -19,7 +19,7 @@ describe('Bubble Sort', function(){
     expect(bub1).toEqual(true);
   });
 
-   it('make sure .sort is not called', function(){
+   it('does not call .sort()', function(){
     bubbleSort(bubbleArr);
     expect(Array.prototype.sort.calls.any()).toEqual(false);
    });
