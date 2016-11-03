@@ -21,8 +21,21 @@ function merge (arr1, arr2){
 }
 
 function mergeSort(unsortedArr) {
+
+  if(unsortedArr.length ===1 ){
+    return ;
+  }
     var splited = split(unsortedArr);
-    if (splited[0].length > 1)
+    var splited2 = [];
+    for(var i=0; i<splited.length;i++){
+      splited2.cocat[splited[i]];
+    if (splited[0].length > 1){
+      return mergeSort(splited[0]);
+    }
+    if(splited[1].length>1){
+      return mergeSort(splited[1]);
+    }
+  }
 }
 
 var listOne = [1,5,9];
