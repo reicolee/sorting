@@ -19,14 +19,14 @@ describe('Split Array function', function() {
 });
 
 
-describe('Merge Sort', function(){
+describe('Merge', function(){
     var listOne,
         listTwo,
         combinedList;
     beforeEach(function(){
-        listOne = [1,2,4,5,7,9];
-        listTwo = [14,20,24,29,30];
-        combinedList = [1,2,4,5,7,9,14,20,24,29,30];
+        listOne = [1,5,9];
+        listTwo = [2,3,6];
+        combinedList = [1,2,3,5,6,9];
     })
   it('is able to merge two sorted arrays into one sorted array', function(){
     var mer1 = merge(listOne, listTwo).every(function(num,index){
@@ -35,4 +35,21 @@ describe('Merge Sort', function(){
 
     expect(mer1).toEqual(true);
   });
+});
+
+
+  describe('Merge Sort', function(){
+      var unsortedList
+          combinedList;
+      beforeEach(function(){
+          unsortedList = [1,14,2,20,4,5,24,30,7,9,29];
+          sortedList = [1,2,4,5,7,9,14,20,24,29,30];
+      })
+    it('is able to merge two sorted arrays into one sorted array', function(){
+      var mer1 = mergeSort(unsortedList).every(function(num,index){
+        return num === sortedList[index];
+      });
+
+      expect(mer1).toEqual(true);
+    });
 });
